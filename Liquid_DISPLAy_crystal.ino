@@ -1,18 +1,15 @@
-#include<LiquidCrystal.h>
-LiquidCrystal MyLCD(12, 11, 5, 4, 3, 2);
-void setup() {
-  MyLCD.begin(16, 2);
-  MyLCD.home();
-  MyLCD.print("Hi");
-  
-  MyLCD.setCursor(1,1);
-  MyLCD.print("I Love You !");
-  
-  // put your setup code here, to run once:
+#include <LiquidCrystal.h>
 
+// Initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+  lcd.begin(16, 2);  // Set up the LCD's number of columns and rows
+  lcd.print("Hello, World!"); // Print message
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  lcd.setCursor(0, 1);  // Move to second row
+  lcd.print("Arduino + LCD");
+  delay(1000);
 }
